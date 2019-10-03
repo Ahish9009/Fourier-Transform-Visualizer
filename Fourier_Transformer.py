@@ -12,35 +12,6 @@ def func(x): #function to be fourier transformed
 
     return (math.e**(-3*x))*math.sin(2*x)
 
-##    return math.cos(2*pi*5.5*x)
-##    return 2
-##    return math.sin(2*pi*1*x)
-##    return math.cos(2*pi*2*x) + math.cos(2*pi*3*x)
-##    return math.cos(x)
-
-##    if (int(x) % 2 == 0):
-##        return 1
-##    return 0
-
-##    return math.e**x
-##    return math.log(math.cos(x) + 2)
-
-##    return math.sin(2*pi*3*x)/(x+10)
-
-##    return int(x**x)%((x+1)*int(x+1))
-
-##    return x*math.cos(2*pi*2*x)*math.cos(2*pi*3*x)
-
-##    return math.cos(2*pi*3*x)*math.e**(-pi*(x**2))
-
-##    return 1/(x+10)
-
-##    return 3*math.cos(2*pi*20*x + 0.2) + math.cos(2*pi*30*x - 0.3) + 2*math.cos(2*pi*40*x +2.4) 
-
-##    if (x >= -1 and x <= 1):
-##        return abs(x)
-##    return 0
-
     if (x >= 0):
         return 1
     return 0
@@ -54,26 +25,13 @@ def func(x): #function to be fourier transformed
     return 0
 
     return math.sin(2*pi/x)
-    
-##    return 1
-
-##    return x/(x+6)
-
-##    return math.cos(2*pi*3*x) + 1
+ 
     
 def g(x, f):
-
-##    x_new = abs(func(x))*math.cos(2*pi*f*x)
-##    y_new = abs(func(x))*(-1)*math.sin(2*pi*f*x)
-
     x_new = (func(x))*math.cos(2*pi*f*x)
     y_new = (func(x))*(-1)*math.sin(2*pi*f*x)
-
-##    if x_new < 0:
-##        print(x)
     
     return x_new, y_new
-##    return func(x)*math.cos(f*x), func(x)*(-1)*math.sin(f*x)
 
 def get_points(start, end, inc, f):
 
@@ -207,24 +165,12 @@ while i <= fmax:
     plt.legend(handles=[red_patch, blue_patch, grey_patch])
     
     plt.show(block = False)
-
-##    if round(i,2) in [0.00, 0.01]:
-##        input()
-
-##    input()
         
     plt.pause(0.001)
     plt.close()
 
     count += 1
     i += inc_w
-
-##    input()
-    
-##print(x_nums[get_max(x_f)])
-
-#axes
-##plt.plot(x_points, y_points, color = 'green')
 
 plt.axhline(0, color = 'black')
 plt.axvline(0, color = 'black')
