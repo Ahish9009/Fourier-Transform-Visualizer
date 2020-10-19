@@ -11,19 +11,25 @@ pi = 3.14
 def func(x): #function to be fourier transformed
 
     return (math.e**(-3*x))*math.sin(2*x)
-
+    
+    # unit step function
     if (x >= 0):
         return 1
     return 0
 
+    # y = xsinc(x)
     return x*(math.sin(x)/(pi*x))**2
 
+    # y = sinc(x)
     return math.sin(x)/(pi*x)
 
+    # y = 1, x in [-1,1]
+    #     0, otherwise
     if (x > -1 and x < 1):
         return 1
     return 0
 
+    # y = sin(2pi/x)
     return math.sin(2*pi/x)
  
     
@@ -52,18 +58,20 @@ def get_points(start, end, inc, f):
 
 
 def get_com(x_points, y_points):
-
+    ''' gets Xcm and Ycm '''
+    
+    # initializes center of mass
     x_cm = 0
     y_cm = 0
-
+    
+    # calculates Xcm
     for i in x_points:
         x_cm += i
-
     x_cm /= len(x_points)
 
+    # calculated Ycm
     for i in y_points:
         y_cm += i
-
     y_cm /= len(y_points)
 
     return x_cm, y_cm
