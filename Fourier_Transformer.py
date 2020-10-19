@@ -118,12 +118,15 @@ end = 10
 atcount = int(abs(f)/inc_w)
 count = 0
 
+# loop i till we reach max frequency
 while i <= fmax:
-
+    
+    # get points from the function (can be optimized)
     x_points, y_points = get_points(start, end, inc_f, i)
     x1, x2, x3, x4 = split(x_points)
     y1, y2, y3, y4 = split(y_points)
     
+    # calculate Center of Mass
     x_cm, y_cm = get_com(x_points, y_points)
 
     x_nums += [i]
@@ -138,7 +141,6 @@ while i <= fmax:
     #plotting the axes
     plt.axhline(0, color = 'black')
     plt.axvline(0, color = 'black')
-##    plt.axvline(3.14, color = 'black')
 
     #Plotting the original function
     plt.plot(x_nums, fun_y, color = 'grey')
